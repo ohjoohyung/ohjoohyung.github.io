@@ -1,27 +1,34 @@
 import * as React from 'react';
-import { DiscussionEmbed } from 'disqus-react';
+import {createRef, useRef} from 'react';
 import config from '../../../_config';
 
-interface CommentProps {
-  slug: string;
-  title: string;
-}
+const src = 'https://utteranc.es/client.js';
 
-const Comment = ({ slug, title }: CommentProps) => {
-  const disqusConfig = {
-    shortname: config.disqusShortname,
-    config: {
-      url: `${config.siteUrl + slug}`,
-      identifier: slug,
-      title,
-    },
-  };
+const Comment = () => {
 
-  return (
-    <div className="comments">
-      <DiscussionEmbed {...disqusConfig} />
-    </div>
-  );
+    const rootElm = createRef();
+    const isUtterancesLoaded = useRef(false);
+    const utterances = document.createElement('script');
+    const utterancesConfig = {
+        src,
+        repo: config.utteranceRepo,
+        theme: 'github-light',
+        label: 'Comment',
+        async: true,
+        'issue-term': 'pathname',
+        crossorigin: 'anonymous',
+    };
+
+    Object.keys(utterancesConfig).forEach((configKey) => {
+        utterances.setAttribute(configKey, utterancesConfig[configKey]);
+    });
+    rootElm.current.appendChild(utterances);
+    isUtterancesLoaded.current = true;
+
+    return (
+        <div className="comments" ref={rootElm}>
+        </div>
+    );
 };
 
 export default Comment;
