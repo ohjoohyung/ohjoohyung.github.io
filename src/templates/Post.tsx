@@ -340,7 +340,7 @@ const Post = (props: postProps) => {
                 <AdSense.Google
                   client={config.googleAdsenseClient || 'ca-pub-5001380215831339'}
                   slot={config.googleAdsenseSlot || '5214956675'}
-                  style={{ display: 'block' }}
+                  style={{ display: 'none' }}
                   format="auto"
                   responsive="true"
                 />
