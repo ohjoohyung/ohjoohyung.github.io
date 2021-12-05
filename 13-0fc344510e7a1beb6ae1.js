@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{cor7:function(e,t,n){"use strict";n.r(t);var o=n("FdF9");t.default=function(){return o.createElement("div",{className:"comments"},o.createElement("script",{src:"https://utteranc.es/client.js",repo:"ohjoohyung/ohjoohyung.github.io","issue-term":"pathname",label:"comment",theme:"github-light",crossOrigin:"anonymous",async:!0}))}}}]);
-//# sourceMappingURL=13-0fc344510e7a1beb6ae1.js.map
