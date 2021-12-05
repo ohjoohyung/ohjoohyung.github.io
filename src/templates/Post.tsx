@@ -46,7 +46,7 @@ interface postProps {
 interface iConfig {
   enablePostOfContents: boolean;
   enableSocialShare: boolean;
-  disqusShortname?: string;
+  utteranceRepo: string;
 }
 
 const Post = (props: postProps) => {
@@ -66,10 +66,10 @@ const Post = (props: postProps) => {
   if (Number(update?.split(',')[1]) === 1) update = null;
   const { slug } = fields;
   const { series } = pageContext;
-  const { enablePostOfContents, enableSocialShare }: iConfig = config;
+  const { enablePostOfContents, utteranceRepo, enableSocialShare }: iConfig = config;
   const isTableOfContents = enablePostOfContents && tableOfContents !== '';
-  // const isDevelopment = process.env.NODE_ENV === 'development';
-  // const isDisqus: boolean = disqusShortname ? true : false;
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  const isUtterance: boolean = utteranceRepo ? true : false;
   const isSocialShare = enableSocialShare;
 
   const mapTags = tags.map((tag: string) => {
@@ -320,20 +320,20 @@ const Post = (props: postProps) => {
           ) : null}
 
           {
-          //   isDevelopment ? (
-          //   <>
-          //     <aside className="ad ad-dev">
-          //       <span>Ads</span>
-          //       <span>displayed when you deploy</span>
-          //     </aside>
-          //     {isDisqus ? (
-          //       <div className="comments comments-dev">
-          //         <span>Comments</span>
-          //         <span>displayed when you deploy</span>
-          //       </div>
-          //     ) : null}
-          //   </>
-          // ) :
+            isDevelopment ? (
+            <>
+              <aside className="ad ad-dev">
+                <span>Ads</span>
+                <span>displayed when you deploy</span>
+              </aside>
+              {isUtterance ? (
+                <div className="comments comments-dev">
+                  <span>Comments</span>
+                  <span>displayed when you deploy</span>
+                </div>
+              ) : null}
+            </>
+          ) :
               (
             <>
               <aside className="ad">

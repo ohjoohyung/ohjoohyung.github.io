@@ -1,42 +1,39 @@
 import * as React from 'react';
-import {createRef, useRef} from 'react';
+import {createRef, useEffect, useRef} from 'react';
 import config from '../../../_config';
+import {useColorMode} from "theme-ui";
 
 const src = 'https://utteranc.es/client.js';
 
 const Comment = () => {
+    const [colorMode] = useColorMode();
 
-    // const rootElm = createRef();
-    // const isUtterancesLoaded = useRef(false);
-    // const utterances = document.createElement('script');
-    // const utterancesConfig = {
-    //     src,
-    //     repo: config.utteranceRepo,
-    //     theme: 'github-light',
-    //     label: 'Comment',
-    //     async: true,
-    //     'issue-term': 'pathname',
-    //     crossorigin: 'anonymous',
-    // };
-    //
-    // Object.keys(utterancesConfig).forEach((configKey) => {
-    //     utterances.setAttribute(configKey, utterancesConfig[configKey]);
-    // });
-    // rootElm.current.appendChild(utterances);
-    // console.log(rootElm)
-    //
-    // isUtterancesLoaded.current = true;
-    // console.log(utterances)
+    const rootElm = createRef<HTMLDivElement>();
+    const isUtterancesLoaded = useRef(false);
+    useEffect(() => {
+        if (!rootElm.current || isUtterancesLoaded.current) return;
+
+        const utterances = document.createElement('script');
+        const utterancesConfig = {
+            src,
+            repo: config.utteranceRepo,
+            theme: colorMode === 'dark' ? 'photon-dark' : 'github-light',
+            label: 'comment',
+            async: true,
+            'issue-term': 'pathname',
+            crossorigin: 'anonymous',
+        };
+
+        Object.keys(utterancesConfig).forEach((configKey) => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            utterances.setAttribute(configKey, utterancesConfig[configKey]);
+        });
+        rootElm.current.appendChild(utterances);
+        isUtterancesLoaded.current = true;
+    }, [rootElm]);
     return (
-        <div className="comments">
-            <script src="https://utteranc.es/client.js"
-                    repo="ohjoohyung/ohjoohyung.github.io"
-                    issue-term="pathname"
-                    label="comment"
-                    theme="github-light"
-                    crossOrigin="anonymous"
-                    async>
-            </script>
+        <div className="comments" ref={rootElm}>
         </div>
     );
 };
