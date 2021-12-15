@@ -3,7 +3,7 @@ title: Cross Join 살펴보기
 date: 2021-09-30  
 tags:
 - database
-- cross join
+- join
 ---
 
 ## Cross Join?

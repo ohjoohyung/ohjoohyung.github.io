@@ -2,8 +2,7 @@
 title: "[프로젝트] Criteria -> QueryDSL 마이그레이션 도입기" 
 date: 2021-09-27  
 tags:
-- Criteria
-- QueryDSL
+- jpql
 ---
 
 ## 기존 검색 API
