@@ -1,5 +1,5 @@
 ---
-title: "[프로젝트] Criteria -> QueryDSL 마이그레이션 도입기" 
+title: "Criteria -> QueryDSL 마이그레이션 해보기" 
 date: 2021-09-27  
 tags:
 - jpql
