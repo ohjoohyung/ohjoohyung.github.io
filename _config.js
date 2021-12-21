@@ -14,7 +14,7 @@ module.exports = {
     // If the file does not exist, it is replaced by a random image.
 
   /** Home > Bio information*/
-  comment: 'Web Backend Developer ',
+  comment: '공부해서 남 주자 ',
   name: 'JooHyung Oh',
   company: '',
   location: 'Korea',
