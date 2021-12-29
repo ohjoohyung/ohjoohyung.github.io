@@ -1,5 +1,5 @@
 ---
-title: 보또보 Flyway 도입기
+title: 프로젝트 Flyway 도입기
 date: 2021-08-25  
 tags:
 - flyway
