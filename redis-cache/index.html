@@ -564,7 +564,7 @@
 <ul>
 <li>태그 조회 쿼리</li>
 </ul>
-<p align="center"><img width="70%" src="https://user-images.githubusercontent.com/62014888/147400942-fbb97e10-e6b3-435a-88ca-8377f42ed02d.png"></p>
+<p align="center"><img width="70%" src="https://user-images.githubusercontent.com/62014888/147873743-57198f9f-1664-474c-8127-4393b49759e0.png"></p>
 <p>동일한 키워드를 계속해서 검색할 때마다 유저, 태그 리스트를 조회하는 쿼리가 나가는 것은 매번 I/O 작업을 하는 것이라 속도가 느리고 성능상 좋지 않을 것이라고 판단했고 이를 위해 캐싱을 적용해야겠다고 생각하게 되었다.<br>
 그리고 때마침 인기 검색어와 인기 문제집을 위해서 Redis를 사용하고 있었고 <code class="language-text">WAS별로 캐시 공유</code> 및 <code class="language-text">TTL 설정</code>을 위해 저장소로 Redis를 사용하기로 했다!</p>
 <ul>
