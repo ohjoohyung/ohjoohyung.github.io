@@ -33,7 +33,7 @@ tags:
 
 - 태그 조회 쿼리
 
-<p align="center"><img width="70%" src="https://user-images.githubusercontent.com/62014888/147400942-fbb97e10-e6b3-435a-88ca-8377f42ed02d.png"></p>
+<p align="center"><img width="70%" src="https://user-images.githubusercontent.com/62014888/147873743-57198f9f-1664-474c-8127-4393b49759e0.png"></p>
 
 
 
