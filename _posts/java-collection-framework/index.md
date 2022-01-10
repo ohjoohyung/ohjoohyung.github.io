@@ -24,7 +24,7 @@ JCF는 JDK 1.2버전에 도입되었는데 그 이전에도 물론 Vector, HashT
 
 그래서 Java 개발자는 이러한 문제를 처리하기 위해 공통 인터페이스를 마련하기로 결정하고 JDK 1.2에서 Collections Framework를 도입된 것이다!
 
-지금의 Vector와 HashTable은 모두 Collections Framework를 준수하도록 수정되었기에 버전을 돌리지 않는 이상 옛날 코드는 볼 수 없다ㅎㅎ;
+지금의 Vector와 HashTable은 모두 Collections Framework를 준수하도록 수정되었기에 버전을 돌리지 않는 이상 옛날 코드는 보기 힘들다ㅎㅎ;
 
 <br/>
 
@@ -117,19 +117,74 @@ List Interface의 구현체는 다음과 있다.
         List<String> list = Collections.synchronizedList(new ArrayList<>());
         ```
     
-      조금 더 자세히 살펴보자면 Vector의 메서드는 메서드 레벨에 synchronized 키워드가 있고 SynchronizedList에는 메서드 안에 synchronized 블록이 있는 것을 볼 수 있다. 무슨 차이가 있는지 후에 멀티 스레드를 좀 더 공부하면서 정리해봐야겠다.
-    
-    
+      그런데 조금 더 자세히 살펴보니 Vector의 메서드는 메서드 레벨에 synchronized 키워드가 있고 SynchronizedList에는 메서드 안에 synchronized 블록이 있는 것을 볼 수 있다. 무슨 차이가 있는지 후에 멀티 스레드를 좀 더 공부하면서 정리해봐야겠다.
+
+      <br/>
+
     - Stack 특징
     
       Stack은 흔히 알고 있는 LIFO 특징을 가진 자료구조다. 문제는 Vector를 상속해서 구현했기에 Vector의 단점을 모두 가지고 있다. 그래서 자바에서 친절하게 Stack이 아닌 Deque를 사용해라고 문서에 적혀있다.
     
-        ![Untitled - 2022-01-05T163320 407](https://user-images.githubusercontent.com/62014888/148178069-b3de709e-2fed-421d-b632-57e3fd4dc2dd.png)
+      ![Untitled - 2022-01-05T163320 407](https://user-images.githubusercontent.com/62014888/148178069-b3de709e-2fed-421d-b632-57e3fd4dc2dd.png)
 
 <br/>
 
 ## Set
 
+Set Interface는 중복 요소가 없고 입력 순서대로의 저장 순서를 보장하지 않는 데이터 집합을 이용할 수 있도록 만든 인터페이스이다. 
+
+Set Interface의 구현체는 다음과 같다.
+
+1) HashSet
+   
+   - 특징
+     
+         HashSet은 중복 요소가 없고 입력 순서를 보장하지 않는 컬렉션 클래스다.   
+         재밌게도 내부를 보게 되면 HashMap이 존재하고 HashSet의 생성자에서 HashMap을 생성해준다.
+         그리고 데이터를 삽입하는 add 메서드를 보면 아래와 같이 map에다가 저장하는 모습을 볼 수 있다. (여기서 PRESENT는 더미 데이터다.)  
+         즉, HashSet은 내부적으로 HashMap을 이용하여 데이터를 key에다가 삽입, 삭제, 조회한다. 
+         이러한 key를 기반으로 hashCode와 버킷 수를 이용해 인덱스를 만들기 때문에 중복을 허용하지 않을 수 있는 것이다.
+         더 자세한 내용은 HashMap때 다루겠다!
+         ![image](https://user-images.githubusercontent.com/62014888/148762938-0273dac2-f5bc-428f-8cac-fe26bd8c7519.png)
+
+    <br/>
+
+   - 시간복잡도
+     
+         HashSet은 따로 조회 메서드가 없는 대신에 Iterator를 이용해 데이터를 순회할 수 있다.   
+         삽입, 삭제의 경우 기본적으로 hashCode를 통해 key에 해당하는 인덱스로 접근하기에 O(1)이지만 최악의 경우 O(N)이 걸린다.    
+         이 최악의 경우는 Java에서 해시 충돌이 발생했을 때 어떤 방법을 사용하여 해결했는지와 관련있는데 마찬가지로 자세한 내용은 HashMap때 다루겠다..ㅎㅎ;;
+
+
+<br/> 
+
+
+2) LinkedHashSet
+
+   - 특징
+      
+         LinkedHashSet은 이름에서 알 수 있듯이 기존의 HashSet에 Link가 추가되어 순서를 보장할 수 있게 된다.  
+         즉, 중복은 허용하지 않으면서 순서를 보장하고 싶을 때 사용할 수 있는 컬렉션 클래스다.  
+         내부를 보게 되면 HashSet의 기능을 거의 다 가지면서 (HashSet을 상속하고 있음) 생성할 때 LinkedHashMap을 만들어서 사용한다.
+         ![image](https://user-images.githubusercontent.com/62014888/148773198-ae7cc3bf-5780-41a8-9674-f2c6363e251f.png)
+
 <br/>
 
-## Queue
+3) TreeSet
+
+   - 특징
+   
+          TreeSet은 HashSet과 같이 중복 요소가 없고 입력 순서를 보장하지 않는 컬렉션 클래스다.  
+          단, HashSet과 달리 지정한 정렬 방법대로 순서를 정렬하여 저장한다.  
+         마찬가지로 내부를 보게 되면 TreeMap을 사용하는 모습을 볼 수 있다. 
+         TreeMap의 경우 정렬을 위해 Red-Black Tree를 사용하고 있다고 하며 Red-Black Tree에 대한 내용은 이 [블로그](https://zeddios.tistory.com/237) 에서 자세하게 확인할 수 있다.
+
+
+<br/>
+
+
+# 참고
+
+- https://st-lab.tistory.com/142
+- https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html
+- https://www.geeksforgeeks.org/collections-in-java-2/
