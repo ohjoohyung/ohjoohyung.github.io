@@ -2,6 +2,8 @@
 title: "[Java] Garbage Collection이란?"  
 date: 2022-01-24  
 tags:
+- java
+- gc
 ---
 
 ## Garbage Collection이 무엇일까?
