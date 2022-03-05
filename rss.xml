@@ -1,4 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dev.Oh | Feed]]></title><description><![CDATA[JooHyung Oh's Dev Blog]]></description><link>https://ohjoohyung.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 09 Feb 2022 14:49:09 GMT</lastBuildDate><item><title><![CDATA[[이펙티브 자바] 19. 상속을 고려해 설계하고 문서화하라. 그러지 않았다면 상속을 금지하라]]></title><description><![CDATA[상속을 고려한 설계와 문서화란? 상속을 고려한 설계와 문서화란 정확히 무얼 뜻할까? 우선, 메서드를 재정의하면 어떤 일이 일어나는지를 정확히 정리하여 문서로 남겨야 한다. 즉, 상속용 클래스는 재정의할 수 있는 메서드들을 내부적으로 어떻게 이용하는지…]]></description><link>https://ohjoohyung.github.io/effective-java-item19/</link><guid isPermaLink="false">https://ohjoohyung.github.io/effective-java-item19/</guid><pubDate>Wed, 09 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;상속을-고려한-설계와-문서화란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%83%81%EC%86%8D%EC%9D%84-%EA%B3%A0%EB%A0%A4%ED%95%9C-%EC%84%A4%EA%B3%84%EC%99%80-%EB%AC%B8%EC%84%9C%ED%99%94%EB%9E%80&quot; aria-label=&quot;상속을 고려한 설계와 문서화란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;상속을 고려한 설계와 문서화란?&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dev.Oh | Feed]]></title><description><![CDATA[JooHyung Oh's Dev Blog]]></description><link>https://ohjoohyung.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 05 Mar 2022 15:32:18 GMT</lastBuildDate><item><title><![CDATA[Statement와 PreparedStatement]]></title><description><![CDATA[Statement 일반적인 쿼리(Statement)를 만들어 실행하면 쿼리 분석, 컴파일, 실행 단계를 거치게 된다. 그러다보니 매번 쿼리를 실행할 때마다 반복적으로 단계를 거치게 되어 성능이 떨어질 수 있다. 뿐만 아니라 애플리케이션에서 제공해주는…]]></description><link>https://ohjoohyung.github.io/statement-preparedstatement/</link><guid isPermaLink="false">https://ohjoohyung.github.io/statement-preparedstatement/</guid><pubDate>Fri, 04 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;statement&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#statement&quot; aria-label=&quot;statement permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Statement&lt;/h2&gt;
+&lt;p&gt;일반적인 쿼리(Statement)를 만들어 실행하면 쿼리 분석, 컴파일, 실행 단계를 거치게 된다.&lt;br&gt;
+그러다보니 매번 쿼리를 실행할 때마다 반복적으로 단계를 거치게 되어 성능이 떨어질 수 있다.&lt;br&gt;
+뿐만 아니라 애플리케이션에서 제공해주는 라이브러리(java는 jdbc)에서 Statement를 사용해서 쿼리를 작성할 경우
+파라미터로 들어가는 곳에 &quot;or 1 = 1&quot; 과 같은 것을 삽입하여 모든 정보를 가져오거나 테이블을 통째로 날려버리는 등의
+SQL Injection 공격에 취약해지게 된다.&lt;/p&gt;
+&lt;br/&gt; 
+&lt;h2 id=&quot;preparedstatement&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#preparedstatement&quot; aria-label=&quot;preparedstatement permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;PreparedStatement&lt;/h2&gt;
+&lt;p&gt;이를 위해 데이터베이스에서 PreparedStatement를 제공해준다.&lt;br&gt;
+앞서 말한 쿼리 분석, 컴파일 과정을 거쳐 실행 계획을 미리 만들어두고 세션 내에서 같은 쿼리를 사용할 때마다
+동일한 실행 계획을 이용할 수 있게 해준다.&lt;br&gt;
+또한 placeholder(? 문자)가 포함되어 있는 쿼리를 이용하면 placeholder에 값을 넣어줄 수 있는데
+이렇게 되면 미리 실행 계획이 만들어져 있어 잘못된 값이 오면 무시되므로 SQL Injection을 예방할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;prepare&lt;/span&gt; stmt1 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;select * from test where id = ?&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;@a&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;1&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;execute&lt;/span&gt; stmt1 &lt;span class=&quot;token keyword&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;@a&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그렇다면 MySQL에서 PreparedStatement는 어떨까?&lt;br&gt;
+특히 MySQL에서 jdbc 드라이버로 제공해주는 PreparedStatement 구현체를 보니까 재밌는 사실을 알 수 있었다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;h3 id=&quot;client-preparedstatement&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#client-preparedstatement&quot; aria-label=&quot;client preparedstatement permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Client PreparedStatement&lt;/h3&gt;
+&lt;p&gt;MySQL은 4.1 버전부터 완전한 PreparedStatement를 지원하였기 때문에 그 전에는 Jdbc 드라이버를 통해
+ClientPreparedStatement만 지원했다고 한다. 그렇기 때문에 PreparedStatement 흉내만 냈을 뿐이지
+실제 MySQL에서 제공하는 PreparedStatement를 사용하는 것이 아니기에 매번 쿼리 분석, 컴파일, 실행 단계가 발생한다고 한다.&lt;br&gt;
+오잉? 그렇다면 SQL Injection은 어떻게 막지?&lt;br&gt;
+이는 따로 파라미터로 들어온 값에 특정 특수문자 같은게 존재하면 \를 추가해 escape 시켜서 보내준다.&lt;br&gt;
+그렇기에 SQL Injection을 막을 수 있다고 한다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;h3 id=&quot;server-preparedstatement&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#server-preparedstatement&quot; aria-label=&quot;server preparedstatement permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Server PreparedStatement&lt;/h3&gt;
+&lt;p&gt;추가된 ServerPreparedStatement 객체는 실제 MySQL에서 제공하는 PreparedStatement를 사용할 수 있도록 해준다.&lt;br&gt;
+아래 메서드는 ServerPreparedStatement 생성자에 존재하는 serverPrepare라는 메서드인데 ServerPreparedQuery의 serverPrepare를 보면 Prepare 구문으로 만들도록 MySQL에 요청하는 걸 볼 수 있다.
+&lt;img src=&quot;https://user-images.githubusercontent.com/62014888/156883610-75b7b0ba-4d30-4e1e-be67-8b1a5ea87c91.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;그래서 실제 흐름은 Connection으로부터 PreparedStatement가 만들어질 때 MySQL에서 해당 쿼리를 이용해서 Prepare 구문을 만들고 이를 계속 사용하게 된다.&lt;br&gt;
+이러한 설정은 useServerPrepStmts 값에 따라 바꿀 수 있다고 한다.&lt;br&gt;
+userServerPrepStmts=false이면 ClientPreparedStatement, true이면 SeverPreparedStatement를 사용할 수 있다고 하는데
+기존 코드와의 호환성을 위해 false가 default라고 한다.&lt;/p&gt;
+&lt;p&gt;실제로 userServerPrepStmts=false로 하면 ClientPreparedStatement를 사용해 MySQL에서 show global status; 를 입력해 보았을 때 Prepared_stmt_count(세션 상관없이 지금 운영중인 PreparedStatement 수)가 올라가있지 않은 반면
+userServerPrepStmts=true로 하면 ServerPreparedStatement를 사용해 올라간 모습을 볼 수 있다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;h2 id=&quot;그렇다면-우리-플젝에서도&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B7%B8%EB%A0%87%EB%8B%A4%EB%A9%B4-%EC%9A%B0%EB%A6%AC-%ED%94%8C%EC%A0%9D%EC%97%90%EC%84%9C%EB%8F%84&quot; aria-label=&quot;그렇다면 우리 플젝에서도 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;그렇다면 우리 플젝에서도?&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/woowacourse-teams/2021-botobo&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;보고 또 보고&lt;/a&gt; 플젝에서는 jpa를 쓰는데 결국 jpa도 jdbc를 쓰기 때문에
+혹시 MariaDB에서 제공해주는 PreparedStatement를 사용하지 않고 있는건가 라는 합리적 의심이 들기 시작했다.
+테스트해본 결과 정말 사용하고 있지 않았고 userServerPrepStmts=true를 추가하니 사용된 모습을 볼 수 있었다.&lt;br&gt;
+그렇다면 앞으로 userServerPrepStmts=true를 추가하여 ServerPreparedStatement를 사용해야 할까?&lt;br&gt;
+그건 경우에 따라 다를 것 같다. 어차피 이 PreparedStatement라는게 해당 세션 내에서만 사용할 수 있고 같은 쿼리를 반복해서 사용하는 경우에 효과가 있는거라
+(&lt;a href=&quot;https://kwonnam.pe.kr/wiki/database/mysql/jdbc&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;심지어 테스트해보니 더 느리다는 글도 있다&lt;/a&gt;) 적절하게 상황에 따라 테스트해보면서 사용하면 될 것 같다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;h2 id=&quot;참고&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B0%B8%EA%B3%A0&quot; aria-label=&quot;참고 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;참고&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://dev.mysql.com/doc/refman/8.0/en/sql-prepared-statements.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://dev.mysql.com/doc/refman/8.0/en/sql-prepared-statements.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.facebook.com/cookilab/posts/544029815653831/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://www.facebook.com/cookilab/posts/544029815653831/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://kwonnam.pe.kr/wiki/database/mysql/jdbc&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://kwonnam.pe.kr/wiki/database/mysql/jdbc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://2ssue.github.io/programming/HikariCP-MySQL/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://2ssue.github.io/programming/HikariCP-MySQL/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[[이펙티브 자바] 19. 상속을 고려해 설계하고 문서화하라. 그러지 않았다면 상속을 금지하라]]></title><description><![CDATA[상속을 고려한 설계와 문서화란? 상속을 고려한 설계와 문서화란 정확히 무얼 뜻할까? 우선, 메서드를 재정의하면 어떤 일이 일어나는지를 정확히 정리하여 문서로 남겨야 한다. 즉, 상속용 클래스는 재정의할 수 있는 메서드들을 내부적으로 어떻게 이용하는지…]]></description><link>https://ohjoohyung.github.io/effective-java-item19/</link><guid isPermaLink="false">https://ohjoohyung.github.io/effective-java-item19/</guid><pubDate>Wed, 09 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;상속을-고려한-설계와-문서화란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%83%81%EC%86%8D%EC%9D%84-%EA%B3%A0%EB%A0%A4%ED%95%9C-%EC%84%A4%EA%B3%84%EC%99%80-%EB%AC%B8%EC%84%9C%ED%99%94%EB%9E%80&quot; aria-label=&quot;상속을 고려한 설계와 문서화란 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;상속을 고려한 설계와 문서화란?&lt;/h2&gt;
 &lt;p&gt;상속을 고려한 설계와 문서화란 정확히 무얼 뜻할까?&lt;/p&gt;
 &lt;p&gt;우선, 메서드를 재정의하면 어떤 일이 일어나는지를 정확히 정리하여 문서로 남겨야 한다.&lt;br&gt;
 즉, 상속용 클래스는 재정의할 수 있는 메서드들을 내부적으로 어떻게 이용하는지(자기사용) 문서로 남겨야 한다.&lt;/p&gt;
@@ -1398,45 +1450,4 @@ JDK 외에도 모듈 개념이 널리 받아들여질지 예측하기는 아직 
 &lt;li&gt;public static final 필드가 참조하는 객체가 불변인지 확인하라.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[IntelliJ Custom File Template 만들기]]></title><description><![CDATA[현재 깃헙 블로그 템플릿으로 Borderless 를 사용하고 있다. 인텔리제이로 마크다운을 작성하고 있는데 이때 매번 특정 형식에 맞게 마크다운을 작성해야 했다. 그러다보니 글을 작성하기 위해 마크다운 파일을 만들때 항상 파일 이름은 index로 설…]]></description><link>https://ohjoohyung.github.io/file-template-tip/</link><guid isPermaLink="false">https://ohjoohyung.github.io/file-template-tip/</guid><pubDate>Tue, 28 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;현재 깃헙 블로그 템플릿으로 &lt;a href=&quot;https://github.com/junhobaik/junhobaik.github.io&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;Borderless&lt;/a&gt; 를 사용하고 있다.&lt;br&gt;
-인텔리제이로 마크다운을 작성하고 있는데 이때 매번 특정 형식에 맞게 마크다운을 작성해야 했다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;markdown&quot;&gt;&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token hr punctuation&quot;&gt;---&lt;/span&gt;
-title:  
-date:   
-&lt;span class=&quot;token title important&quot;&gt;tags:
-&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;그러다보니 글을 작성하기 위해 마크다운 파일을 만들때 항상 파일 이름은 index로 설정하고 위 항목들도 다 작성해줘야 했는데
-한 두번은 괜찮은데 이걸 계속한다고 생각하니 너무 귀찮아질거 같았다.&lt;/p&gt;
-&lt;p&gt;인텔리제이에 메서드 템플릿 만드는게 있는데 파일 템플릿 만드는거도 있지 않을까? 싶었는데 진짜 있었다.&lt;br&gt;
-그래서 방법을 공유하려고 한다.&lt;/p&gt;
-&lt;br/&gt;
-&lt;ol&gt;
-&lt;li&gt;File -&gt; Settings -&gt; File and Code Templates 로 이동한다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;80%&quot; src=&quot;https://user-images.githubusercontent.com/62014888/147543151-1022d658-e5b4-4bc3-9277-ed4905f92e8d.jpg&quot;&gt;&lt;/p&gt;
-&lt;br/&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;Markdown 파일 템플릿을 설정하므로 Markdown을 새롭게 추가하고 원하는 형식을 작성한다.&lt;br&gt;
-Name은 Markdown, Extension은 md로 설정한다.&lt;br&gt;
-${}는 새롭게 마크다운을 작성할 때 받는 파라미터가 들어가게 된다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;80%&quot; src=&quot;https://user-images.githubusercontent.com/62014888/147543297-66d01480-b62f-499f-8faf-2702456ff016.png&quot;&gt;&lt;/p&gt;
-&lt;br/&gt;
-&lt;ol start=&quot;3&quot;&gt;
-&lt;li&gt;
-&lt;p&gt;새롭게 마크다운을 작성할 때 그림과 같이 설정한 값을 입력할 수 있게 된다.&lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;80%&quot; src=&quot;https://user-images.githubusercontent.com/62014888/147543840-87a07484-16a1-4e2a-a713-8854c5193261.png&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;br/&gt;
-&lt;ol start=&quot;4&quot;&gt;
-&lt;li&gt;
-&lt;p&gt;입력 값과 함께 설정한 템플릿에 맞게 글이 작성된 것을 볼 수 있다. &lt;/p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;80%&quot; src=&quot;https://user-images.githubusercontent.com/62014888/147543911-d75a295c-9fe3-438f-aa90-eca3b64a42c4.png&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;br/&gt;
-&lt;h2 id=&quot;참고&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%B0%B8%EA%B3%A0&quot; aria-label=&quot;참고 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;참고&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jojoldu.tistory.com/128&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;https://jojoldu.tistory.com/128&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item></channel></rss>
