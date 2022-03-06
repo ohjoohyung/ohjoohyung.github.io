@@ -563,17 +563,11 @@ System이라는 final 클래스에 있는 out이라는 변수명을 가진 Print
 <p><img src="https://user-images.githubusercontent.com/62014888/145754215-83bd9002-a633-4b34-bab1-0ccffccb7f1e.png" alt="Untitled (28)"></p>
 <ul>
 <li>실제로 ConsoleTarget이라는 enum도 살펴보면 System.out.write를 사용하는 모습을 볼 수 있다.</li>
-<li>이걸 보고 "System.out.println()을 사용하는 것은 logger를 사용해 로깅하는 것에 비해 성능상 좋지 않아!" 라고 무조건적으로 생각하는 것은 조금 잘못되었다라는 것을 알게 되었다.</li>
-<li>결국은 둘 다 System.out을 사용하여 i/o 작업이 발생하는 것이며 println의 경우 synchronized 키워드가 더 붙여져 있는 것일뿐 성능상으로 크게 차이가 없다고 추측이 된다.</li>
-<li>실제로 for문으로 출력 테스트를 해보았을 때 logger를 사용한 출력 시간이 더 오래걸렸다.</li>
-<li>
-<p>그렇다면 왜 성능에 관해서 이야기가 나오는 걸까?</p>
-<ul>
-<li>결론적으로 비동기 로깅을 사용하면 성능이 향상된다.</li>
+<li>이걸로 보았을 때 ConsoleAppender를 사용하여 콘솔에 로그를 출력한다면 System.out.write를 사용해 똑같이 i/o 작업이 발생한다. 그렇지만 System.out.println() 보다 synchronized 블록을 덜 사용하기에 성능이 좋지 않을까라는 생각이 든다.   </li>
+<li>다만 직접 Logger를 생성하여 사용하여 출력 코드를 보게되면 synchronized 블록을 여러번 사용하는 코드가 없기에 확실히 성능이 좋을 것으로 추측한다. 그리고 출력해주는 곳에 lock을 쓰고 있기에 thread safe 한 것 같다ㅎㅎ<br>
+(그런데 테스트를 잘못 한건지 실제로 for문으로 출력 테스트를 해보았을 때 System.out.println() 보다 Logger를 사용한 출력 시간이 더 오래걸렸는데 왜 그런지 의문이다..)</li>
+<li>또한 Logger를 사용할 때 비동기 로깅을 사용하면 성능이 더 향상된다.</li>
 <li>특히 파일로 로그를 남길 때 비동기 로깅을 적용시킬 수가 있는데 적용하게 되면 로그 발생과 로그 쓰기를 분리시키기에 로깅 메소드를 호출하는 시점에 i/o 작업이 바로 수행되지 않아 성능이 향상된다.</li>
-</ul>
-</li>
-<li>Baeldung 블로그나 스택오버플로우를 검색해봐도 System.out.println() vs logger에서 성능 이야기는 전혀 나오지 않았다. 나오더라도 비동기와 같이 나오는 경우만 볼 수 있었다.</li>
 </ul>
 <br/>
 <h2 id="그렇다면-언제-무엇을-쓸까" style="position:relative;"><a href="#%EA%B7%B8%EB%A0%87%EB%8B%A4%EB%A9%B4-%EC%96%B8%EC%A0%9C-%EB%AC%B4%EC%97%87%EC%9D%84-%EC%93%B8%EA%B9%8C" aria-label="그렇다면 언제 무엇을 쓸까 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>그렇다면 언제 무엇을 쓸까?</h2>
